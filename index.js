@@ -1,5 +1,5 @@
 // Add your code here
-function submitData (name, email){
+/*function submitData (name, email){
   let formData = {
        name: name,
        email: email
@@ -29,4 +29,27 @@ let configObj = {
               h3.innerHTML = error.message;
               document.body.appendChild(h3);
               console.log(error.message);
-          });
+          });*/
+          function submitData(name, email) {
+    return fetch("http://localhost:3000/users", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        },
+        body: JSON.stringify({
+            name,
+            email
+        })
+
+    })
+    .then(function(response){
+        return response.json()
+    })
+    .then(function(object) {
+        document.body.innerHTML = object["id"]
+    })
+    .catch(function(error) {
+        document.body.innerHTML = error.message
+    });
+}
