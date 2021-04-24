@@ -30,4 +30,3 @@ let configObj = {
         },
         body: JSON.stringify(formData)
     };
-  
