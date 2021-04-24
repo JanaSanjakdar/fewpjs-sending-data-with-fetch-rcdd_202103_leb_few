@@ -30,4 +30,3 @@ let configObj = {
               document.body.appendChild(h3);
               console.log(error.message);
           });
-  
